@@ -15,7 +15,7 @@ import "./App.css";
 
 const Portfolio: React.FC = () => {
   return (
-     <Router>
+     <Router basename="/PortfolioProject">
       <Header />
       <main className="main-content">
         <Routes>
