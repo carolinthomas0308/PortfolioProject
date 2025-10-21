@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Education from "./pages/Education";
@@ -15,7 +15,7 @@ import "./App.css";
 
 const Portfolio: React.FC = () => {
   return (
-     <BrowserRouter basename="/PortfolioProject">
+     <Router basename="/">
       <Header />
       <main className="main-content">
         <Routes>
@@ -31,7 +31,7 @@ const Portfolio: React.FC = () => {
         </Routes>
       </main>
       <Footer />
-    </BrowserRouter>
+    </Router>
   );
 };
 export default Portfolio;

@@ -14,7 +14,7 @@ const Home: React.FC = () => {
           showing what I’ve learned and what I enjoy creating in software.
         </p>
         <section style={{ textAlign: "center", marginTop: "3rem" }}>
-                  <button className="button" onClick={() => window.location.href = "/PortfolioProject/projects"}>
+                  <button className="button" onClick={() => window.location.href = "#/projects"}>
           View My Work
         </button>
         </section>
@@ -43,7 +43,7 @@ const Home: React.FC = () => {
       {/* Contact Section */}
       <section style={{ textAlign: "center", marginTop: "3rem" }}>
         <p>Let’s build something amazing together!</p>
-        <button className="button" onClick={() => window.location.href = "/PortfolioProject/contact"}>
+        <button className="button" onClick={() => window.location.href = "#/contact"}>
           Contact Me
         </button>
       </section>
