@@ -9,24 +9,35 @@ import Gallery from "./pages/Gallery";
 import VideoGallery from "./pages/VideoGallery";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import "./App.css";
+import useDarkMode from "./hooks/useDarkMode";
+import BlogPost from "./pages/BlogPost";
+import Achievements from "./pages/Achievements";
+
+
 
 const Portfolio: React.FC = () => {
+  const { darkMode } = useDarkMode();
+
+  console.log("Portfolio component loaded");
+
   return (
-     <Router basename="/">
+    <Router>
       <Header />
-      <main className="main-content">
+      <main className={`main-content ${darkMode ? "dark" : "light"}`}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/education" element={<Education />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/achievements" element={<Achievements />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/videogallery" element={<VideoGallery />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
@@ -34,4 +45,5 @@ const Portfolio: React.FC = () => {
     </Router>
   );
 };
+
 export default Portfolio;

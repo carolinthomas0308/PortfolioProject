@@ -1,0 +1,35 @@
+{
+  "major": [
+    {
+      "title": "TrueCoverage Engineering",
+      "description": "Backend microservices, optimized APIs, and database integrations for the TrueCoverage insurance platform.",
+      "technologies": ["Java", "Spring Boot", "MariaDB", "Redis Cache"],
+      "type": "live",
+      "link": "https://truecoverage.com"
+    },
+    {
+      "title": "BrokerEngage Platform",
+      "description": "Built backend modules, data pipelines, API integrations, and agent workflow services for an insurance brokerage platform.",
+      "technologies": ["Java", "REST APIs", "Redis Cache"],
+      "type": "live",
+      "link": "https://brokerengage.com"
+    },
+    {
+      "title": "AD Analysis using Deep Learning",
+      "description": "CNN + OpenCV deep learning system to classify advertisement type from input videos.",
+      "technologies": ["Python", "TensorFlow", "OpenCV"],
+      "type": "report",
+      "link": "/assets/reports/AdAnalysis.pdf"
+    }
+  ],
+
+  "seminar": [
+    {
+      "title": "Visual Positioning System (VPS)",
+      "description": "SLAM-based visual positioning system for indoor/outdoor scene localization.",
+      "technologies": ["Python", "OpenCV", "SLAM"],
+      "type": "report",
+      "link": "/assets/reports/VPS.pdf"
+    }
+  ]
+}

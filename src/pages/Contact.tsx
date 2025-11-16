@@ -1,3 +1,6 @@
+/* 
+Phase 1 and 2 code commented for reference
+
 import React, { useState } from "react";
 import { io, Socket } from "socket.io-client";
 
@@ -28,7 +31,7 @@ const Contact: React.FC = () => {
     <section className="section contact-section">
       <h1 className="contact-title">Contact Me</h1>
       <div className="contact-container">
-        {/* Contact Info */}
+      
         <div className="contact-details">
           <h2>Get in Touch</h2>
           <p><strong>Email:</strong> carolin.thomas0308@gmail.com</p>
@@ -45,7 +48,7 @@ const Contact: React.FC = () => {
             </a>
           </p>
         </div>
-        {/* Contact Form */}
+       
         <form className="contact-form" onSubmit={handleSubmit}>
           <input
             type="text"
@@ -77,4 +80,85 @@ const Contact: React.FC = () => {
     </section>
   );
 };
-export default Contact;
+export default Contact;*/
+
+/**
+ * Contact Page with EmailJS + GSAP Success Animation
+ * Fully API-enabled | TS | Validated | Animated
+ */
+
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import "../styles/pagesstyle/Contact.css";
+
+export default function Contact() {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    if (!formRef.current) return;
+
+    const SERVICE_ID = "service_a3aewrm";              
+    const TEMPLATE_CONTACT = "template_jimu6l8";       
+    const TEMPLATE_REPLY = "template_25ejb1s";           
+    const PUBLIC_KEY = "B3a2czu7SzYDWqoMm";              
+
+    // 1️⃣ Send message to YOU
+    const sendToMe = emailjs.sendForm(
+      SERVICE_ID,
+      TEMPLATE_CONTACT,
+      formRef.current,
+      PUBLIC_KEY
+    );
+
+    // 2️⃣ Send auto-reply to the visitor
+    const sendReply = emailjs.sendForm(
+      SERVICE_ID,
+      TEMPLATE_REPLY,
+      formRef.current,
+      PUBLIC_KEY
+    );
+
+    Promise.all([sendToMe, sendReply])
+      .then(() => {
+        setStatus("success");
+        formRef.current?.reset();
+      })
+      .catch(() => {
+        setStatus("error");
+      });
+  };
+
+  return (
+    <div className="page-wrapper contact-wrapper">
+      <h1>Contact Me</h1>
+
+      <form ref={formRef} className="contact-form" onSubmit={handleSubmit}>
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea name="message" placeholder="Your Message" required />
+
+        <button type="submit" className="primary-btn">Send Message</button>
+
+        {status === "sending" && (
+          <p className="info sending">Sending… Please wait.</p>
+        )}
+        {status === "success" && (
+          <p className="info success">
+            Message sent successfully! Check your email for confirmation.
+          </p>
+        )}
+        {status === "error" && (
+          <p className="info error">
+            Something went wrong. Please try again.
+          </p>
+        )}
+      </form>
+    </div>
+  );
+}
+

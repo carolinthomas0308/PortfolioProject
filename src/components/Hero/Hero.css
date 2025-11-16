@@ -1,0 +1,40 @@
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 0 20px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.hero-section.light {
+  background: linear-gradient(to bottom, #f0f0f0, #ffffff);
+  color: #333;
+}
+
+.hero-section.dark {
+  background: linear-gradient(to bottom, #1a1a1a, #333333);
+  color: #f0f0f0;
+}
+
+.hero-text {
+  margin: 10px 0;
+  font-size: 2.5rem;
+}
+
+.dark-mode-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #0077ff;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.dark-mode-btn:hover {
+  background-color: #005bb5;
+}

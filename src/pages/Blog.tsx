@@ -1,23 +1,24 @@
-import React from "react";
+import { blogs } from "../data/blog";
+import { Link } from "react-router-dom";
+import "../styles/pagesstyle/Blog.css";
 
-const Blog: React.FC = () => {
-  const posts = [
-    { title: "How I built a React portfolio from scratch", summary: "Step-by-step guide to building a personal website" },
-  ];
-
+export default function Blog() {
   return (
-    <div style={{ padding: "2rem" }}>
-      {/* Sample Content - will add redirection in future. */}
+    <div className="page-wrapper">
       <h1>Blog</h1>
-      {posts.map((post, idx) => (
-        <div key={idx} style={{ marginBottom: "1.5rem", border: "1px solid #ccc", padding: "1rem", borderRadius: "8px" }}>
-          <h3>{post.title}</h3>
-          <p>{post.summary}</p>
-          <button>Read More</button>
-        </div>
-      ))}
+
+      <div className="blog-list">
+        {blogs.map((b) => (
+          <div className="blog-card" key={b.id}>
+            <h3>{b.title}</h3>
+            <span className="blog-date">{b.date}</span>
+            <p>{b.summary}</p>
+            <Link className="read-more" to={`/blog/${b.id}`}>
+              Read More →
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
-};
-
-export default Blog;
+}

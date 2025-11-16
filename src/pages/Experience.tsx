@@ -1,3 +1,5 @@
+/* Phase 1 and 2 code commented for reference
+
 import React from "react"
 const Experience: React.FC = () => {
   const experiences = [
@@ -35,3 +37,16 @@ const Experience: React.FC = () => {
       ))}
     </div>
   );};export default Experience;
+*/
+
+
+import ExperienceTimeline from "../components/Experience/ExperienceTimeline";
+
+export default function ExperiencePage() {
+  return (
+    <div className="page-wrapper">
+      <h1 className="page-title">Experience</h1>
+      <ExperienceTimeline />
+    </div>
+  );
+}

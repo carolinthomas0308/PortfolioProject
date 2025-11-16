@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Senior Product Engineer",
+    "company": "TrueCoverage",
+    "period": "April 2025 – Aug 2025",
+    "description": "Built backend services for insurance platform, implemented secure API endpoints, optimized system performance by 20%, and collaborated closely in Agile teams including sprint planning, stand-ups, and retrospectives.",
+    "technologies": ["Java/Microservcies", "Databases", "REST APIs", "Agile","RedisCache"]
+  },
+  {
+    "title": "Software Engineer",
+    "company": "BrokerEngage",
+    "period": "Oct 2019 – April 2025",
+    "description": "Developed and optimized scalable backend applications, contributed to core client-facing projects, and supported project planning and design discussions.",
+    "technologies": ["Java", "Databases", "REST APIs","Spring Boot"]
+  }
+]

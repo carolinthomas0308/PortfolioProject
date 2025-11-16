@@ -1,0 +1,130 @@
+/* -------------------------------------------------
+   PROJECTS PAGE WRAPPER
+---------------------------------------------------*/
+.projects-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* -------------------------------------------------
+   SEARCH & FILTER BAR
+---------------------------------------------------*/
+.projects-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.projects-search {
+  padding: 0.6rem 1rem;
+  width: 250px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.projects-filter {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* -------------------------------------------------
+   GRID
+---------------------------------------------------*/
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* -------------------------------------------------
+   PROJECT CARD
+---------------------------------------------------*/
+.project-card {
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* LIGHT MODE */
+body.light .project-card {
+  background: #ffffff;
+  color: #222;
+}
+
+/* DARK MODE */
+body.dark .project-card {
+  background: #1c1c1e;
+  color: #f5f5f5;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+}
+
+/* Hover Effect */
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* -------------------------------------------------
+   TITLE
+---------------------------------------------------*/
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* -------------------------------------------------
+   TAGS (TECHNOLOGIES)
+---------------------------------------------------*/
+.tech-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.tech-tag {
+  background: #e8e7ff;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #4f46e5;
+}
+
+/* DARK MODE TAGS */
+body.dark .tech-tag {
+  background: #343434;
+  color: #d9d7ff;
+}
+
+/* -------------------------------------------------
+   PROJECT BUTTONS
+---------------------------------------------------*/
+.project-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #4f46e5;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-size: 0.9rem;
+  transition: 0.25s ease;
+}
+
+.project-btn:hover {
+  background: #3c34c0;
+}
+
+.project-btn svg {
+  margin-left: 5px;
+}

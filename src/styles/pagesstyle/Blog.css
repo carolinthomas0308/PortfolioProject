@@ -1,0 +1,31 @@
+.blog-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.blog-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--card-bg, #fff);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+body.dark .blog-card {
+  background: #1e1e1e;
+  color: white;
+}
+
+.blog-date {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.read-more {
+  text-decoration: none;
+  color: #4f46e5;
+  font-weight: bold;
+}
+
+.blog-reader {
+  max-width: 800px;
+}

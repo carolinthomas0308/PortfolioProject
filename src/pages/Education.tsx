@@ -1,3 +1,5 @@
+/* Phase 1 and 2 code commented for reference
+
 import React from "react";
 import { FaGraduationCap, FaSchool, FaBook } from "react-icons/fa";
 
@@ -25,7 +27,7 @@ const Education: React.FC = () => {
     <div className="education-container">
       <h1>Education & Skills</h1>
 
-      {/* Timeline */}
+    
       <div className="timeline">
         {educationHistory.map((edu, index) => (
           <div key={index} className="timeline-card">
@@ -39,7 +41,7 @@ const Education: React.FC = () => {
         ))}
       </div>
 
-      {/* Skills */}
+   
       <h2>Technical Skills</h2>
       <div className="skills-container">
         {technicalSkills.map((skill) => (
@@ -62,3 +64,15 @@ const Education: React.FC = () => {
 };
 
 export default Education;
+*/
+
+import EducationTimeline from "../components/Education/EducationTimeline";
+
+export default function Education() {
+  return (
+    <div className="page-wrapper">
+      <h1 className="page-title">Education</h1>
+      <EducationTimeline />
+    </div>
+  );
+}
