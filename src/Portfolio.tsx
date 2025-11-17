@@ -16,8 +16,6 @@ import useDarkMode from "./hooks/useDarkMode";
 import BlogPost from "./pages/BlogPost";
 import Achievements from "./pages/Achievements";
 
-
-
 const Portfolio: React.FC = () => {
   const { darkMode } = useDarkMode();
 
