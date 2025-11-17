@@ -2,7 +2,8 @@ name: Deploy Portfolio
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - FirstPortfolio   # your actual working branch
 
 permissions:
   contents: write
@@ -10,10 +11,11 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Setup Node
@@ -30,6 +32,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./dist
-          github_token: ${{ secrets.GITHUB_TOKEN }}
