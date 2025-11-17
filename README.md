@@ -149,21 +149,17 @@ User template: template_jimu6l8
 
 Auto reply: template_25ejb1s
 
-7.  CI/CD Deployment with GitHub Actions
+7.  CI/CD Deployment
 
-Automatic deployment pipeline:
+This project uses a full CI/CD pipeline with **GitHub Actions**, automatically:
 
-Installs dependencies
+- Installs dependencies
+- Builds production bundle
+- Deploys `/dist` to GitHub Pages
+- Runs on every push to `main`
 
-Builds Vite project
+Workflow file: `.github/workflows/deploy.yml`
 
-Deploys /dist folder to GitHub Pages
-
-CI/CD Workflow (GitHub Actions)
-
-This file is located at:
-
-.github/workflows/deploy.yml
 
 name: Deploy Portfolio
 
