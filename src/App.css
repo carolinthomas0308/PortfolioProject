@@ -12,7 +12,6 @@ html, body, #root {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   transition: background 0.3s ease, color 0.3s ease;
 }
-
 /* LIGHT MODE */
 body.light {
   background-color: #f5f6f8;
