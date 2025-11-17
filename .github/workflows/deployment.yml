@@ -5,15 +5,12 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write  # allow gh-pages push
-
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Setup Node
