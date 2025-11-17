@@ -2,7 +2,7 @@ name: Deploy Portfolio
 
 on:
   push:
-    branches: ["FirstPortFolio", "main"]
+    branches: ["FirstPortfolio"]
 
 permissions:
   contents: read
@@ -10,15 +10,16 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "deploy"
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -31,7 +32,7 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Upload artifact
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
