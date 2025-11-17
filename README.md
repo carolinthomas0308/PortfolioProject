@@ -160,7 +160,6 @@ This project uses a full CI/CD pipeline with **GitHub Actions**, automatically:
 
 Workflow file: `.github/workflows/deploy.yml`
 
-
 name: Deploy Portfolio
 
 on:
