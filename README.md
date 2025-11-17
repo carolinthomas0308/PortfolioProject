@@ -1,264 +1,251 @@
 Portfolio Website — Carolin Thomas
 
-A modern, animated, fully responsive portfolio built using React, TypeScript, Vite, GSAP, and EmailJS, showcasing my experience, projects, achievements, gallery, education timeline, blogs, and contact system.
+A modern, animated, fully responsive portfolio built using React, TypeScript, Vite, GSAP, EmailJS, and Lazy Loading, showcasing my experience, projects, achievements, blog, gallery, education timeline, and contact system.
 
-This project was created as part of CS5709 Digital Portfolio – Assignment Phase 2 & Phase 3, with a focus on modularity, animation, dynamic data management, API usage, CI/CD deployment, and improved UI/UX.
+This project was developed for CS5709 Digital Portfolio — Phase 2 & Phase 3, focusing on modularity, animation, performance optimisation, API integration, CI/CD, and improved UI/UX.
 
-Live Website
+> Live Website
 
-🔗 https://carolinthomas0308.github.io/PortfolioProject/
+>> https://carolinthomas0308.github.io/PortfolioProject/#/
 
- Phase 2 & Phase 3 Requirements — Completed
-✔ Enhanced UI/UX (GSAP animations, gradients, responsive layout)
+Phase 2 & Phase 3 Requirements Completed
+Core Features
+
 ✔ Modular codebase with separated components
-✔ Dynamic JSON-driven content
-✔ Search + Filter (Projects)
-✔ Dark / Light Mode using custom hook
-✔ EmailJS API integration for Contact form
-✔ Education + Experience Timeline with GSAP ScrollTrigger
-✔ Achievements Page (Phase 3)
-✔ Blog Page + Blog Preview (Phase 3)
-✔ Project Modal (Phase 3)
-✔ Gallery + Video Gallery with animations
-✔ CI/CD deployment using GitHub Actions
-✔ Comprehensive documentation and reflection
+✔ Dynamic content using JSON/TS data
+✔ Dark / Light Mode (state managed)
+✔ Fully responsive layout
+✔ GSAP animations + ScrollTrigger
+✔ Lazy loading using React.lazy() + Suspense
+✔ Image lazy loading (loading="lazy") (optional)
+✔ Video Gallery with animations
+✔ Gallery with smooth transitions
+✔ Education & Experience Timeline
+✔ Blog page + individual blog posts
+✔ Achievements page
+✔ Project filtering + Project Details Modal
+✔ EmailJS contact form + auto-reply
+✔ GitHub Actions CI/CD deployment
 ✔ GitHub Pages hosting with HashRouter support
-🛠 Tech Stack
+
+> Tech Stack
 
 React + TypeScript
 
 Vite
 
-GSAP (Animations / ScrollTrigger)
+GSAP + ScrollTrigger
 
-EmailJS (API for Contact form)
+React.lazy & Suspense (Lazy Loading)
+
+EmailJS
+
+JSON/TS Data Rendering
 
 GitHub Actions (CI/CD)
 
-JSON data rendering
+CSS Animations & Responsive Design
 
-Modern CSS + Responsive layout
-
-Project Structure
+> Project Structure
 src/
-  components/
-    Header/
-    Footer/
-    Projects/
-    Experience/
-    Gallery/
-    Video/
-  pages/
-    Home.tsx
-    About.tsx
-    Experience.tsx
-    Education.tsx
-    Projects.tsx
-    Achievements.tsx
-    Blog.tsx
-    Gallery.tsx
-    VideoGallery.tsx
-    Contact.tsx
-  hooks/
-    useDarkMode.ts
-  data/
-    experience.json
-    education.json
-    gallery.json
-    videos.json
-    achievements.ts
-    blogs.ts
-  styles/
-    pagesstyle/
-    components/
+│
+├── assets/
+│   ├── Images/
+│   ├── Reports/
+│   ├── Videos/
+│   ├── CarolinThomas_Resume.pdf
+│
+├── components/
+│   ├── Education/
+│   │   ├── EducationItem.tsx
+│   │   └── EducationTimeline.tsx
+│   │
+│   ├── Experience/
+│   │   ├── ExperienceDetailsModel.tsx
+│   │   ├── ExperienceItem.tsx
+│   │   └── ExperienceTimeline.tsx
+│   │
+│   ├── Footer/
+│   │   ├── Footer.css
+│   │   └── Footer.tsx
+│   │
+│   ├── Gallery/
+│   │   ├── FilterBar.tsx
+│   │   ├── GalleryGrid.tsx
+│   │   ├── GalleryItem.tsx
+│   │   └── Lightbox.tsx
+│   │
+│   ├── Header/
+│   │   ├── Header.css
+│   │   └── Header.tsx
+│   │
+│   ├── Hero/
+│   │   ├── Hero.css
+│   │   └── Hero.tsx
+│   │
+│   ├── Navbar/
+│   │   └── (navbar files)
+│   │
+│   ├── Projects/
+│   │   ├── ProjectFilter.tsx
+│   │   ├── ProjectItem.tsx
+│   │   ├── ProjectList.tsx
+│   │   └── ProjectModel.tsx
+│   │
+│   └── Video/
+│       ├── SearchBar.tsx
+│       ├── VideoCard.tsx
+│       └── VideoList.tsx
+│
+├── data/
+│   ├── achievements.ts
+│   ├── blog.ts
+│   ├── education.json
+│   ├── experience.json
+│   ├── gallery.json
+│   ├── projects.json
+│   ├── projects.ts
+│   └── videos.json
+│
+├── hooks/
+│   └── useDarkMode.ts
+│
+├── pages/
+│   ├── About.tsx
+│   ├── Achievements.tsx
+│   ├── Blog.tsx
+│   ├── BlogPost.tsx
+│   ├── Contact.tsx
+│   ├── Education.tsx
+│   ├── Experience.tsx
+│   ├── Gallery.tsx
+│   ├── Home.tsx
+│   ├── Projects.tsx
+│   └── VideoGallery.tsx
+│
+├── styles/
+│   ├── pagestyle/
+│   │   ├── About.css
+│   │   ├── Achievement.css
+│   │   ├── Blog.css
+│   │   ├── Contact.css
+│   │   ├── Education.css
+│   │   ├── Experience.css
+│   │   ├── Gallery.css
+│   │   ├── Home.css
+│   │   ├── ProjectModel.css
+│   │   ├── Projects.css
+│   │   └── Video.css
+│
+├── types/
+│   └── index.ts
+│
+├── App.css
+├── App.tsx
+├── index.css
+├── main.tsx
+└── Portfolio.tsx
 
- Key Features
- 1. GSAP Animated Interface
+
+> Key Features
+1. Lazy Loading for Better Performance
+
+Implemented using:
+
+const Projects = lazy(() => import("./pages/Projects"));
+const Gallery = lazy(() => import("./pages/Gallery"));
+
+
+Wrapped in:
+
+<Suspense fallback={<div>Loading...</div>}>
+
+
+This reduces initial load time and improves performance.
+
+2. GSAP Animated Interface
 
 Smooth hero animations
 
-Timeline scroll animations (Experience & Education)
+Timeline scroll animations
 
-Gallery & Video fade-in effects
+Fade-in effects for Gallery / Video
 
-Animated cards and page transitions
+Animated cards and transitions
 
-Modal animation for Projects
+ScrollTrigger timeline effects
 
-2.  Dark / Light Mode Toggle
+3. Dark / Light Mode Toggle
 
-Implemented using a custom React hook
+Custom React hook
 
-Maintains state across pages
+Global theme state
 
-Applies global theme changes to all sections
+Works across all pages
 
-3.  Dynamic JSON Rendering
+4. Dynamic JSON/TS Rendering
 
-All portfolio content is stored in JSON/TS data files:
+All portfolio content comes from data files:
 
 Projects
 
-Experiences
+Blogs
+
+Experience
 
 Education
 
 Achievements
 
-Blog posts
-
-Gallery images
+Gallery
 
 Videos
 
-No hardcoded content → fully modular and maintainable.
+No hardcoded content → fully maintainable.
 
-4.  Projects Page With Filters
+5. Project Filtering + Modal
 
 Filter by technology
 
 Live search
 
-Category classification
+Modal view with project details, links, and technologies
 
-Project Modal with detailed view
+6. Blog System
 
-Icons for GitHub, Live, PDF
+Blog previews
 
-5.  Blog System
+Each blog has its own dynamic page
 
-Fully dynamic blog list
+JSON-driven
 
-Individual blog view
+7. EmailJS Contact Form
 
-Blog preview shown on Home page
+Sends email directly
 
-6. EmailJS Contact API
+Auto-reply
 
-Sends email directly from Contact page
+No backend needed
 
-Auto-reply email
+8. CI/CD Deployment with GitHub Actions
 
-No backend required
+Workflow automatically:
 
-Uses:
+Installs dependencies
 
-Public key: B3a2czu7SzYDWqoMm
+Builds production bundle
 
-User template: template_jimu6l8
+Deploys to GitHub Pages
 
-Auto reply: template_25ejb1s
-
-7.  CI/CD Deployment
-
-This project uses a full CI/CD pipeline with **GitHub Actions**, automatically:
-
-- Installs dependencies
-- Builds production bundle
-- Deploys `/dist` to GitHub Pages
-- Runs on every push to `main`
-
-Workflow file: `.github/workflows/deploy.yml`
-
-name: Deploy Portfolio
-
-on:
-  push:
-    branches: ["main", "FirstPortfolio"]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-
-Contact Form Setup (EmailJS)
-
-EmailJS integration:
-
-Public Key: B3a2czu7SzYDWqoMm
-User Template ID: template_jimu6l8
-Auto Reply Template ID: template_25ejb1s
-
-
-Uses emailjs.sendForm() inside React.
-
-Achievements (Phase 3 Feature)
-
-5+ years backend engineering experience across TrueCoverage, BrokerEngage, Benefitalign
-
-Optimized APIs using Redis + Database indexing
-
-Built AD Analysis deep learning model using TensorFlow
-
-Implemented full CI/CD pipeline using GitHub Actions
-
-Automated deployment and modularized entire project
-
-Reflection
-
-Peer feedback highlighted improvements needed in:
-
-Folder structure
-
-Code modularity
-
-Comments & documentation
-
-Navigation clarity
-
-UI/UX consistency
-
-Interactivity
-
-I improved the portfolio by:
-
-Fully restructuring pages and components
-
-Adding JSON-driven content
-
-Introducing GSAP animations
-
-Implementing dark mode
-
-Adding search/filter
-
-Adding a blog system and achievements page
-
-Implementing CI/CD deployment
-
-Improving user flow and responsiveness
-
-This assignment helped me understand modern frontend architecture, React modularity, animation libraries, and deployment automation.
-
- Running the Project Locally
+> Running the Project Locally
 npm install
 npm run dev
 
- Build for Production
+> Build for Production
 npm run build
 
-Contact
+> Contact
 
- Email: carolinthomas0308@gmail.com
+Email: carolinthomas0308@gmail.com
 
- Resume: Available on About page
+Resume available on the About page.
