@@ -7,6 +7,8 @@ export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
   const { darkMode, toggleDarkMode } = useDarkMode();
 
+  // Trigger scroll-based animations to enhance user interaction
+  // without affecting core data rendering logic
   useEffect(() => {
     if (heroRef.current) {
       gsap.from(heroRef.current.querySelectorAll(".hero-text"), {

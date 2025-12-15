@@ -1,3 +1,10 @@
+/**
+ * Timeline component
+ * Renders a chronological view of items such as education or experience.
+ * Dynamically maps over external JSON/TypeScript data and composes item components.
+ * Supports animated transitions and evolving content structure.
+ */
+
 import { useEffect, useRef } from "react";
 import EducationItem from "./EducationItem";
 import educationDataRaw from "../../data/education.json";

@@ -1,3 +1,9 @@
+/**
+ * Projects page
+ * Renders project data dynamically with filtering and modal interaction.
+ * Data is sourced from external JSON/TypeScript files for maintainability.
+ */
+
 import { useState } from "react";
 import { projects } from "../data/projects";
 import ProjectList from "../components/Projects/ProjectList";

@@ -15,7 +15,7 @@
   border-radius: 14px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.1);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  border-left: 6px solid #ff9f42; /* gold/amber accent */
+  border-left: 6px solid #ff9f42;
 }
 
 .exp-card:hover {

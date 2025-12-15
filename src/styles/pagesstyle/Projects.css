@@ -1,6 +1,3 @@
-/* -------------------------------------------------
-   PROJECTS PAGE WRAPPER
----------------------------------------------------*/
 .projects-page {
   max-width: 1200px;
   margin: 0 auto;
@@ -52,20 +49,15 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* LIGHT MODE */
 body.light .project-card {
   background: #ffffff;
   color: #222;
 }
-
-/* DARK MODE */
 body.dark .project-card {
   background: #1c1c1e;
   color: #f5f5f5;
   box-shadow: 0 4px 12px rgba(255,255,255,0.05);
 }
-
-/* Hover Effect */
 .project-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
@@ -100,7 +92,6 @@ body.dark .project-card {
   color: #4f46e5;
 }
 
-/* DARK MODE TAGS */
 body.dark .tech-tag {
   background: #343434;
   color: #d9d7ff;

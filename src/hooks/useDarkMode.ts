@@ -1,3 +1,8 @@
+/**
+ * Custom hook to manage dark/light theme state across the application.
+ * Persists user preference and ensures consistent theming across pages.
+ */
+
 import { useEffect, useState } from "react";
 
 export default function useDarkMode() {

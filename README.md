@@ -1,5 +1,5 @@
 Portfolio Website — Carolin Thomas
-
+------------------------------------------------------------------------------------------------------------------------------------
 A modern, animated, fully responsive portfolio built using React, TypeScript, Vite, GSAP, EmailJS, and Lazy Loading, showcasing my experience, projects, achievements, blog, gallery, education timeline, and contact system.
 
 This project was developed for CS5709 Digital Portfolio — Phase 2 & Phase 3, focusing on modularity, animation, performance optimisation, API integration, CI/CD, and improved UI/UX.
@@ -8,7 +8,26 @@ This project was developed for CS5709 Digital Portfolio — Phase 2 & Phase 3, f
 
 >> https://carolinthomas0308.github.io/PortfolioProject/#/
 
-Phase 2 & Phase 3 Requirements Completed
+> Project Evolution & Documentation
+
+This portfolio was developed iteratively across multiple academic phases.
+As the project evolved, the documentation was continuously updated to reflect
+changes in architecture, features, and implementation decisions.
+
+In line with research on documentation for software evolution, the documentation
+is treated as a living artefact and is maintained alongside the codebase to
+support maintainability, clarity, and future evolution.
+
+> Documentation Scope
+
+The documentation for this project includes this README, the technical report,
+architecture descriptions, and inline code comments for key components. Together,
+these artefacts provide a consolidated view of the system to support understanding,
+maintenance, and future evolution.
+
+
+> Phase 2 & Phase 3 Requirements Completed (Iterative Development)
+
 Core Features
 
 ✔ Modular codebase with separated components
@@ -29,22 +48,14 @@ Core Features
 ✔ GitHub Pages hosting with HashRouter support
 
 > Tech Stack
-
-React + TypeScript
-
-Vite
-
-GSAP + ScrollTrigger
-
-React.lazy & Suspense (Lazy Loading)
-
-EmailJS
-
-JSON/TS Data Rendering
-
-GitHub Actions (CI/CD)
-
-CSS Animations & Responsive Design
+- React + TypeScript
+- Vite
+- GSAP + ScrollTrigger
+- React.lazy & Suspense (Lazy Loading)
+- EmailJS
+- JSON/TS Data Rendering
+- GitHub Actions (CI/CD)
+- CSS Animations & Responsive Design
 
 > Project Structure
 src/
@@ -146,6 +157,9 @@ src/
 ├── main.tsx
 └── Portfolio.tsx
 
+The folder structure reflects a modular, component-based architecture and is
+documented to support system understanding, maintainability, and future extension.
+
 
 > Key Features
 1. Lazy Loading for Better Performance
@@ -237,7 +251,12 @@ Builds production bundle
 
 Deploys to GitHub Pages
 
+
 > Running the Project Locally
+
+The setup instructions are documented to support onboarding and ease of reuse
+as the project evolves.
+
 npm install
 npm run dev
 

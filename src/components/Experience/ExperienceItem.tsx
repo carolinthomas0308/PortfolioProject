@@ -1,3 +1,10 @@
+/**
+ * Item component
+ * Represents a single data-driven entry rendered within a timeline or list.
+ * Receives structured data via props and focuses only on presentation logic.
+ * Designed to be reusable and maintainable as content evolves.
+ */
+
 import type { Experience } from "../../types";
 import "../../styles/pagesstyle/Experience.css";
 

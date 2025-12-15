@@ -74,7 +74,8 @@ export default function Home() {
     "BrokerEngage Platform"
   ];
 
-useEffect(() => {
+  // GSAP animation triggered on component mount
+  useEffect(() => {
   if (heroRef.current) {
     gsap.to(heroRef.current.children, {
       opacity: 1,

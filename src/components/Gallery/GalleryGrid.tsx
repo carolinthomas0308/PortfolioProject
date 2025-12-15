@@ -1,3 +1,9 @@
+/**
+ * List component responsible for rendering a collection of items.
+ * Data is sourced externally and rendered dynamically to support scalability.
+ */
+
+
 import { useEffect, useRef } from "react";
 //import galleryDataRaw from "../../data/gallery.json";
 import GalleryCard from "./GalleryItem";
@@ -9,7 +15,9 @@ import "../../styles/pagesstyle/Gallery.css";
 
 export default function GalleryGrid({ items }: { items: GalleryItem[] }) {
   const gridRef = useRef<HTMLDivElement>(null);
-
+  
+  // Trigger scroll-based animations to enhance user interaction
+  // without affecting core data rendering logic
   useEffect(() => {
     if (gridRef.current) {
       gsap.from(gridRef.current.children, {

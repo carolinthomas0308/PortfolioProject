@@ -1,3 +1,6 @@
+# GitHub Actions workflow for automated build and deployment
+# Builds the React application and deploys it to GitHub Pages on push to main
+
 name: Deploy Portfolio
 
 on:

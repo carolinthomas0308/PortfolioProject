@@ -1,3 +1,9 @@
+/**
+ * Modal component for displaying detailed project information.
+ * Activated through user interaction and populated dynamically from data files.
+ * Isolated to ensure separation of concerns and easier future extension.
+ */
+
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import type { ProjectItem } from "../../types";

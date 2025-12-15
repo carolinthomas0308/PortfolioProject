@@ -1,3 +1,8 @@
+/**
+ * List component responsible for rendering a collection of items.
+ * Data is sourced externally and rendered dynamically to support scalability.
+ */
+
 import { useEffect, useRef } from "react";
 //import videoDataRaw from "../../data/videos.json";
 import type { VideoItem } from "../../types";
